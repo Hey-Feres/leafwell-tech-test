@@ -1,0 +1,41 @@
+<div class="card p-4 shadow border-0">
+  <h3>User Symptoms</h3>
+  <span>Please select all that apply</span>
+
+  <%= form_with url: user_symptoms_path do |form| %>
+    <div class="row mt-5">
+      <% @symptoms_options.each do |symptom_option| %>
+        <div class="col-4">
+          <div class="form-check">
+            <%= form.check_box "symptom_id[#{symptom_option.id}]", class: 'form-check-input', checked: @user_symptoms_ids.include?(symptom_option.id) %>
+            <%= form.label "symptom_id[#{symptom_option.id}]", symptom_option.name, class:"form-check-label" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <center>
+      <button type="submit" class="btn btn-success mt-5">Submit</button>
+    </center>
+  <% end %>
+</div>
+
+<style>
+  .card {
+    border-radius: 20px;
+    width: 40%;
+    margin-bottom: 20%;
+    padding: 5% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card span {
+    width: 70%;
+    text-align: center;
+  }
+  .btn {
+    border-radius: 20px;
+  }
+</style>

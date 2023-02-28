@@ -1,0 +1,60 @@
+<div class="card p-4 shadow border-0">
+  <h2>Login</h2>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-group mt-3">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email" %>
+    </div>
+
+    <div class="form-group mt-3">
+      <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="form-group mt-3">
+        <div class="form-check">
+          <%= f.check_box :remember_me, class: 'form-check-input' %>
+          <%= f.label :remember_me, class:"form-check-label" %>
+        </div>
+      </div>
+    <% end %>
+
+    <center>
+      <button type="submit" class="btn btn-success mt-3">Login</button>
+    </center>
+  <% end %>
+
+  <div class="mt-4">
+    <center>
+      <%= render "devise/shared/links" %>
+    </center>
+  </div>
+
+</div>
+
+<style>
+  .card {
+    border-radius: 20px;
+    width: 30%;
+    margin-bottom: 20%;
+    padding: 5% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card span {
+    width: 70%;
+    text-align: center;
+  }
+  .btn {
+    border-radius: 20px;
+  }
+  a {
+    color: #259b35 !important;
+    text-decoration: none;
+  }
+  a:hover{
+    text-decoration: underline;
+  }
+</style>

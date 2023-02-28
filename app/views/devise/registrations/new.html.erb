@@ -1,0 +1,56 @@
+<div class="card p-4 shadow border-0">
+  <h2>Sign up</h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="form-group mt-3">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email" %>
+    </div>
+
+    <div class="form-group mt-3">
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Password" %>
+    </div>
+
+    <div class="form-group mt-3">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Password Confirmation" %>
+    </div>
+
+    <center>
+      <button type="submit" class="btn btn-success mt-3">Signup</button>
+    </center>
+  <% end %>
+
+  <div class="mt-4">
+    <center>
+      <%= render "devise/shared/links" %>
+    </center>
+  </div>
+</div>
+
+<style>
+  .card {
+    border-radius: 20px;
+    width: 30%;
+    margin-bottom: 20%;
+    padding: 5% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card span {
+    width: 70%;
+    text-align: center;
+  }
+  .btn {
+    border-radius: 20px;
+  }
+  a {
+    color: #259b35 !important;
+    text-decoration: none;
+  }
+  a:hover{
+    text-decoration: underline;
+  }
+</style>

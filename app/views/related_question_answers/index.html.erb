@@ -1,0 +1,48 @@
+<%= render 'layouts/navbar' %>
+
+<div class="card">
+	<h4>Conditions</h4>
+	<% @conditions.each do |condition| %>
+		<h6><%= condition.name %></h6>
+	<% end %>
+
+	<hr>
+
+	<h4>Symptoms</h4>
+
+	<% @symptoms.each do |symptom| %>
+		<h6><%= symptom.name %></h6>
+	<% end %>
+
+	<hr>
+
+	<h4>Question Answers</h4>
+
+	<table>
+		<% @question_answers.each do |question_answer| %>
+			<tr>
+				<td><%= question_answer.related_question.content %></td>
+				<td class="text-center <%= question_answer.answer ? 'text-success' : 'text-danger' %>">
+					<%= question_answer.answer ? 'Yes' : 'No' %>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+</div>
+
+<style>
+  .card {
+    border-radius: 20px;
+    width: 40%;
+    z-index: 3;
+    padding: 5% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card span {
+    width: 70%;
+    text-align: center;
+  }
+</style>

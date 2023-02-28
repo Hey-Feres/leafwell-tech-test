@@ -1,0 +1,27 @@
+<div class="card p-4 shadow border-0">
+  <h3>That's all</h3>
+  <span>Thanks for filling the data. You are ready to go.</span>
+  <%= link_to root_path do %>
+    <button class="btn btn-success mt-5"><%= content_for_onboarding_finish_button %></button>
+  <% end %>
+</div>
+
+<style>
+  .card {
+    border-radius: 20px;
+    width: 30%;
+    margin-bottom: 20%;
+    padding: 5% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card span {
+    width: 70%;
+    text-align: center;
+  }
+  .btn {
+    border-radius: 20px;
+  }
+</style>

@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <%= link_to 'Home', root_path, class: current_page?(root_path) ? "nav-link active" : "nav-link" %>
+        <%= link_to 'Check my Answers', related_question_answers_path, class: current_page?(related_question_answers_path) ? "nav-link active" : "nav-link" %>
+				<%= link_to 'Sign Out', destroy_user_session_path, method: :delete, data: {confirm: 'Sign Out?'}, class: "nav-link" %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    border-radius: 0 0 20px 20px;
+  }
+  .navbar .navbar-nav .nav-link.active {
+    color: #259b35;
+  }
+</style>
