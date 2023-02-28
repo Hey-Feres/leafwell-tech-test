@@ -1,7 +1,7 @@
 <div class="card p-4 shadow border-0">
   <h3><%= title_for_onboarding_index %></h3>
   <span><%= content_for_onboarding_index %></span>
-  <%= link_to user_info_path do %>
+  <%= link_to onboarding_user_info_form_path do %>
     <button type="button" class="mt-5 btn btn-success"><%= content_for_onboarding_button %></button>
   <% end %>
 </div>

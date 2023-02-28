@@ -1,7 +1,7 @@
 <div class="card p-4 shadow border-0">
   <h3>User Info</h3>
 
-  <%= form_with url: user_info_path do |form| %>
+  <%= form_with url: onboarding_user_info_path do |form| %>
     <div class="form-group mt-3">
       <%= form.text_field :name, class: "form-control", placeholder: "Your name", value: current_user.name %>
     </div>

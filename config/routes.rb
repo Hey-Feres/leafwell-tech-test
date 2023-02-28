@@ -7,20 +7,24 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get '/onboarding', to: 'onboarding#index'
-  get '/user_info', to: 'onboarding#user_info'
-  get '/user_conditions', to: 'onboarding#user_conditions'
-  get '/user_symptoms', to: 'onboarding#user_symptoms'
-  get '/condition_related_questions_answers', to: 'onboarding#condition_related_questions_answers'
-  get '/symptoms_related_questions_answers', to: 'onboarding#symptoms_related_questions_answers'
-  get '/onboarding_finished', to: 'onboarding#finished'
-  get '/related_question_answers', to: 'related_question_answers#index'
+  namespace :onboarding do
+    get '/user_info/form', to: 'user_info#form', as: :user_info_form
+    get '/user_conditions/form', to: 'user_conditions#form', as: :user_conditions_form
+    get '/user_symptoms/form', to: 'user_symptoms#form', as: :user_symptoms_form
+    get '/conditions_related_questions_answers/form', to: 'conditions_related_questions_answers#form', as: :conditions_related_questions_answers_form
+    get '/symptoms_related_questions_answers/form', to: 'symptoms_related_questions_answers#form', as: :symptoms_related_questions_answers_form
 
-  post '/user_info', to: 'onboarding#save_user_info'
-  post '/user_conditions', to: 'onboarding#save_user_conditions'
-  post '/user_symptoms', to: 'onboarding#save_user_symptoms'
-  post '/condition_related_questions_answers', to: 'onboarding#save_condition_related_questions_answers'
-  post '/symptoms_related_questions_answers', to: 'onboarding#save_symptoms_related_questions_answers'
+    post '/user_info/save', to: 'user_info#save', as: :user_info
+    post '/user_conditions/save', to: 'user_conditions#save', as: :user_conditions
+    post '/user_symptoms/save', to: 'user_symptoms#save', as: :user_symptoms
+    post '/condition_related_questions_answers/save', to: 'conditions_related_questions_answers#save', as: :condition_related_questions_answers
+    post '/symptoms_related_questions_answers/save', to: 'symptoms_related_questions_answers#save', as: :symptoms_related_questions_answers
+  end
+
+  get '/onboarding', to: 'onboarding#index'
+  get '/onboarding_finished', to: 'onboarding#finished'
+
+  get '/my_answers', to: 'related_question_answers#index'
 
   root 'home#index'
 end

@@ -26,7 +26,7 @@ class User < ApplicationRecord
   end
 
   def answered_questions!
-    update(answered_questions: true)
+    update(answered_questions: true, answered_questions_at: DateTime.now)
   end
 
   def completed_onboarding!

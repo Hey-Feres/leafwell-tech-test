@@ -6,7 +6,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <%= link_to 'Home', root_path, class: current_page?(root_path) ? "nav-link active" : "nav-link" %>
-        <%= link_to 'Check my Answers', related_question_answers_path, class: current_page?(related_question_answers_path) ? "nav-link active" : "nav-link" %>
+        <%= link_to 'Check my Answers', my_answers_path, class: current_page?(my_answers_path) ? "nav-link active" : "nav-link" %>
 				<%= link_to 'Sign Out', destroy_user_session_path, method: :delete, data: {confirm: 'Sign Out?'}, class: "nav-link" %>
       </div>
     </div>

@@ -1,14 +1,14 @@
 <div class="card p-4 shadow border-0">
-  <h3>User Symptoms</h3>
+  <h3>User Conditions</h3>
   <span>Please select all that apply</span>
 
-  <%= form_with url: user_symptoms_path do |form| %>
+  <%= form_with url: onboarding_user_conditions_path do |form| %>
     <div class="row mt-5">
-      <% @symptoms_options.each do |symptom_option| %>
+      <% @conditions_options.each do |condition_option| %>
         <div class="col-4">
           <div class="form-check">
-            <%= form.check_box "symptom_id[#{symptom_option.id}]", class: 'form-check-input', checked: @user_symptoms_ids.include?(symptom_option.id) %>
-            <%= form.label "symptom_id[#{symptom_option.id}]", symptom_option.name, class:"form-check-label" %>
+            <%= form.check_box "condition_id[#{condition_option.id}]", class: 'form-check-input', checked: @user_conditions_ids.include?(condition_option.id) %>
+            <%= form.label "condition_id[#{condition_option.id}]", condition_option.name, class:"form-check-label" %>
           </div>
         </div>
       <% end %>

@@ -10,5 +10,5 @@
 
 my_first_job:
    # cron: "* * * */1 *" # Every 1 month
-   cron: "*/5 * * * *" # Every 5 minutes
+   cron: "*/2 * * * *" # Every 2 minutes
    class: "UpdateUserAnsweredQuestionFlagWorker"

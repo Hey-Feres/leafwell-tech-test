@@ -1,14 +1,14 @@
 <div class="card p-4 shadow border-0">
-  <h3>User Symptoms</h3>
+  <h3>User Conditions</h3>
   <span>Please select answer the questions below</span>
 
-  <%= form_with url: condition_related_questions_answers_path do |form| %>
+  <%= form_with url: onboarding_condition_related_questions_answers_path do |form| %>
     <div class="row mt-5">
       <% @questions.each do |question| %>
         <div class="form-group mb-3">
           <center>
           <%= form.label "question_id[#{question.id}]", question.content, class:"form-label" %>
-          <%= form.select "question_id[#{question.id}]", [['No', false], ['Yes', true]], { include_blank: 'Select Answer', selected: @user_question_answers.find_by(related_question_id: question.id).answer }, class: "form-select" %>
+          <%= form.select "question_id[#{question.id}]", [['No', false], ['Yes', true]], { include_blank: 'Select Answer', selected: @user_question_answers.find_by(related_question_id: question.id)&.answer }, class: "form-select" %>
           </center>
         </div>
       <% end %>
