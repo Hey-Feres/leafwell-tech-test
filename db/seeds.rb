@@ -33,6 +33,11 @@ RelatedQuestion.create(content: 'Are you taking antidepressant medicines?', rela
 RelatedQuestion.create(content: 'Are you treating depression on therapy sessions?', related_on: Condition.find_by(name: 'Depression'))
 RelatedQuestion.create(content: 'Do you use insulin?', related_on: Condition.find_by(name: 'Diabetes'))
 
+RelatedQuestion.create(content: 'Do you usually drink enegertic drinks?', related_on: Symptom.find_by(name: 'Heart Palpitations'))
+RelatedQuestion.create(content: 'Do you usually drink coffee?', related_on: Symptom.find_by(name: 'Heart Palpitations'))
+RelatedQuestion.create(content: 'Do you smoke?', related_on: Symptom.find_by(name: 'Dry Mouth'))
+RelatedQuestion.create(content: 'Do you get exposed to stress situations frequently?', related_on: Symptom.find_by(name: 'Headaches'))
+
 # UserCondition.create(user_id: User.first.id, condition_id: Condition.find_by(name: 'Anxiety').id)
 # Condition.find_by(name: 'Anxiety').related_questions.each do |question|
 # 	RelatedQuestionAnswer.create(user_id: User.first.id, related_question_id: question.id, answer: true)
