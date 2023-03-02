@@ -21,12 +21,14 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 # Allow to create multiple record at once
 gem 'activerecord-import'
-# 
+# Admin pannel
 gem 'rails_admin'
-# 
+# Authentication
 gem 'devise'
-# 
+# Background Jobs
 gem 'sidekiq-cron'
+# Process manager for applications with multiple components
+gem 'foreman'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
